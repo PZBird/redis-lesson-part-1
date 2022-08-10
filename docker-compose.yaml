@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  redis:
+    image: docker.io/bitnami/redis:6.0-debian-10
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - redis_data:/bitnami
+    ports:
+      - 6379:6379
+
+volumes:
+  redis_data:
+    driver: local
